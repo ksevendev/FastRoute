@@ -35,7 +35,8 @@
             "FastRoute\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "src/functions.php",
+            "Helpers/helper.php"
         ]
     },
     "autoload-dev": {

@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace FastRoute;
 
+
 use function array_key_exists;
 use function array_reverse;
 use function is_string;
+use FastRoute\RouteHelper;
 
 /**
  * @phpstan-import-type ProcessedData from ConfigureRoutes
@@ -43,6 +45,7 @@ class RouteCollector implements ConfigureRoutes
 
         if (array_key_exists(self::ROUTE_NAME, $extraParameters)) {
             $this->registerNamedRoute($extraParameters[self::ROUTE_NAME], $parsedRoutes);
+            RouteHelper::registerRoute($extraParameters[self::ROUTE_NAME], $route);
         }
     }
 
